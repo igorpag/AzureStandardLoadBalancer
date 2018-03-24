@@ -1,7 +1,10 @@
 # AzureStandardLoadBalancer
 Samples for my blog post on new Azure Standard SKU Load Balancer
 
-Since the Standard SKU Load Balancer is new, and some behaviors are different from the past, I created some very simple samples using PowerShell you can play with and customize. You can find at this link on GitHub. Please be aware that these are NOT production ready, I created them only for learning purpose. Additionally, the code in the samples is not intended to be launched all in once. Instead, you should carefully review each commented section, understand the effects, then run it to observe the outcome. 
+     Azure Load Balancer – A new Standard SKU for Premium Capabilities
+     https://blogs.msdn.microsoft.com/igorpag/2018/03/24/azure-load-balancer-a-new-standard-sku-for-premium-capabilities/
+
+Since the Standard SKU Load Balancer is new, and some behaviors are different from the past, I created some very simple samples using PowerShell you can play with and customize. Please be aware that these are NOT production ready, I created them only for learning purpose. Additionally, the code in the samples is not intended to be launched all in once. Instead, you should carefully review each commented section, understand the effects, then run it to observe the outcome. 
 
 SAMPLE[1]: Create a simple zoned VM with an instance level Standard IP (ILPIP). Look how to create a VM in a specific Azure Availability Zone (AZ), then create a new Standard SKU type Public IP and use it to expose the VM. A Network Security Group (NSG) is necessary to permit traffic through the Standard Public IP, differently from Basic Public IP as done in the past, where all the ports were open for VM access.
 
