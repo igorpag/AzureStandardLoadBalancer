@@ -366,30 +366,5 @@ Get-AzureRmResource | where-object {$_.ResourceGroupName -eq $rgname} | where-ob
 # Delete the Resource Group #
 Remove-AzureRmResourceGroup $rgname -Force
 
-
-
-
-
-
-
-# Start all the VMs in there 
-
-Get-AzureRmResource | where-object {$_.ResourceGroupName -eq $rgname} | where-object {$_.ResourceType -eq "Microsoft.Compute/virtualMachines"} `
- | Start-AzureRmVM
-
-# Stop all the VMs in there
-Get-AzureRmResource | where-object {$_.ResourceGroupName -eq $rgname} | where-object {$_.ResourceType -eq "Microsoft.Compute/virtualMachines"} `
- | Stop-AzureRmVM -Force
-
-
- # Cleanup resources, except for VNET, SUBNETs and STORAGE ACCOUNT: #
-Remove-AzureRmVM -ResourceGroupName $rgname -Name $VMName -force
-Remove-AzureRmNetworkInterface -ResourceGroupName $rgname -Name $NICname -force
-Remove-AzureRmPublicIpAddress -ResourceGroupName $rgname -Name $ILPIP1name -force
-Remove-AzureRmNetworkSecurityGroup -ResourceGroupName $rgname -Name $NSGname -force
-Remove-AzureRmDisk -ResourceGroupName $rgname -Name $OSDiskName -force
-
-
-
 #endregion Maintenance & Clean-up #
 
